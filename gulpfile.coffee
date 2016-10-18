@@ -38,7 +38,12 @@ gulp.task 'styles', ->
   merge src1, src2
     .pipe gulp.dest 'public/css'
 
-gulp.task 'scripts', ->
+gulp.task 'lib', ->
+  gulp.src 'assets/lib/**/*.coffee'
+    .pipe coffee()
+    .pipe gulp.dest 'assets/lib'
+
+gulp.task 'scripts', ['lib'], ->
   glob 'assets/js/*', (err, files) ->
     # TODO: handle error
     files.map (file) ->
