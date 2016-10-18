@@ -1,0 +1,51 @@
+// 普通にSCSSインポート
+// common/_core.scss
+// common/core.scss
+// common/core.css
+// などが検索される
+@import 'common/core';
+
+// bower_componentsのインポート。汚いけどとりあえず妥協
+// 拡張子を明示的につけているのは、slickフォルダにscss, css両方が存在しており
+// インポート対象が曖昧になってしまうため
+@import '../../bower_components/slick-carousel/slick/slick.scss';
+@import '../../bower_components/slick-carousel/slick/slick-theme.scss';
+
+// cssファイルをコンパイル時に読み込みたいときは、拡張子(.css)をつけてはいけない
+// つけると @import url(xxx.css) に翻訳される
+@import '../lib/mylibrary/mylibrary';
+
+
+body {
+
+  font: 300 16px sans-serif;
+  background: $white;
+
+  #header {
+    padding: 2em;
+    background: $blue;
+  }
+
+  #core {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  #footer {
+    padding: 2em;
+    background: $red;
+  }
+
+  .box {
+    padding: 2em;
+    background: $white;
+  }
+
+  .gulp-logo {
+    width: 125px;
+    margin: 0 auto;
+    display: block;
+  }
+
+}
